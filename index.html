@@ -5,22 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Tracker | Home</title>
+
+    <!-- DaisyUI and Tailwind -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="tailwind.init.css">
+
+    <!-- custom css -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
 </head>
 
-<body class="geist-font">
-    <header class="w-4/5 mx-auto py-14">
-        <h1>Job Application Tracker</h1>
+<body class="geist-font bg-[#F8FAFC]">
+    <header class="w-4/5 mx-auto pt-14 pb-8 border-b border-[#E6E7E9] mb-8">
+        <h1 class="text-3xl font-bold mb-4">Job Application Tracker</h1>
 
-        <!-- total card -->
-         <div class="">
-            <p>Total</p>
-            <h1>8</h1>
-         </div>
+        <!-- card container -->
+        <div class="grid grid-cols-3 gap-4">
+
+            <!-- total card -->
+            <div class="border border-[#F1F2F4] bg-[#FFF] p-4 rounded-xl ">
+                <p class="text-[14px] font-medium text-[#323B49] mb-2">Total</p>
+                <h1 id="total-count" class="text-[24px] font-bold text-[#002C5C]">8</h1>
+            </div>
+            <!-- Interview card -->
+            <div class="border border-[#F1F2F4] bg-[#FFF] p-4 rounded-xl">
+                <p class="text-[14px] font-medium text-[#323B49] mb-2">Interview</p>
+                <h1 id="interview-count" class="text-[24px] font-bold text-[#10B981]">0</h1>
+            </div>
+            <!-- Rejected card -->
+            <div class="border border-[#F1F2F4] bg-[#FFF] p-4 rounded-xl">
+                <p class="text-[14px] font-medium text-[#323B49] mb-2">Rejected</p>
+                <h1 id="rejected-count" class="text-[24px] font-bold text-[#EF4444]">0</h1>
+            </div>
+        </div>
     </header>
+
+    <!-- available jobs section -->
+    <section class="w-4/5 mx-auto">
+
+        <h1 class="text-[#002C5C] text-2xl font-bold mb-6">Available Jobs</h1>
+
+        <!-- buttons -->
+        <div class="flex gap-2">
+             <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl">All</button>
+             <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl">Interview</button>
+             <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl">Rejected</button>
+        </div>
+
+
+    </section>
 </body>
 
 </html>
