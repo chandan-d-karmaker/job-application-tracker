@@ -22,6 +22,8 @@
 </head>
 
 <body class="geist-font bg-[#F8FAFC]">
+
+    <!-- upper section -->
     <header class="w-4/5 mx-auto pt-14 pb-8 border-b border-[#E6E7E9] mb-8">
         <h1 class="text-3xl font-bold mb-4">Job Application Tracker</h1>
 
@@ -60,8 +62,11 @@
             <button id="btn-inter" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl">Interview</button>
             <button id="btn-reject" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl">Rejected</button>
         </div>
+    </section>
 
-        <!-- job card section -->
+    <!-- job card section -->
+    <section id="all-job-cards" class="w-4/5 mx-auto hidden">
+
         <div class="space-y-4 pb-16">
 
             <!-- card-1 -->
@@ -381,7 +386,8 @@
                     <div class="badge badge-soft badge-secondary p-5 text-[#002C5C] text-[14px] font-medium mb-2">NOT
                         APPLIED
                     </div>
-                    <p>We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
+                    <p>We are looking for an experienced Frontend Developer to build scalable web applications using
+                        React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
                 </div>
 
 
@@ -394,7 +400,16 @@
 
     </section>
 
-    
+    <!-- no job available -->
+    <section class="w-4/5 mx-auto bg-base-100 rounded-xl">
+
+        <div class="text-center flex flex-col justify-center items-center px-10 py-16">
+            <img src="./assignment_7959593 1.svg" alt="" class="mb-5">
+            <h1 class="text-[#002C5C] font-semibold text-2xl mb-1">No jobs available</h1>
+            <p class="text-[#64748B] text-[16px] leading-[137%]">Check back soon for new job opportunities</p>
+        </div>
+
+    </section>
 </body>
 
 </html>
