@@ -118,7 +118,7 @@ function showOnly(id, btn) {
 
     // set mini count
     const miniCount = document.getElementById('mini-count');
-    miniCount.innerText = show.children.length;
+    miniCount.innerText = show.children.length - 1;
 
 }
 
@@ -132,8 +132,14 @@ function deleteBtn(id){
 
     // get and set total count
     const totalCount = document.getElementById('total-count');
-    const totalParent = document.getElementById('all-job-card');
+    const totalParent = document.getElementById('all-job-cards');
     const miniCount = document.getElementById('mini-count');
-    miniCount.innerText = totalParent.children.length;
-    totalCount.innerText = totalParent.children.length;    
+    miniCount.innerText = totalParent.children.length - 1;
+    totalCount.innerText = totalParent.children.length - 1;    
+
+    if(totalParent.children.length > 0){
+        document.getElementById('default-all').classList.add('hidden');
+    } else {
+        document.getElementById('default-all').classList.remove('hidden');
+    }
 }
