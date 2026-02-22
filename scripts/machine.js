@@ -20,11 +20,11 @@ function interviewClick(id, card) {
         rejectCount.innerText--;
     }
 
-    // set badge and count
+    // set badge
     badge.innerText = "INTERVIEWED";
     badge.classList.add("bg-green-400");
     badge.classList.remove("bg-red-400");
-    interviewCount.innerText = interSection.children.length;
+    
 
     // clone card
     const cloneCard = ogCard.cloneNode(true);
@@ -36,12 +36,16 @@ function interviewClick(id, card) {
     // set status
     ogCard.dataset.status = "interview";
 
+    // set count
+    interviewCount.innerText = interSection.children.length - 1;
+
     // default view
-    if(interSection.children.length>0){
+    if(interviewCount.innerText > 0) {
         document.getElementById('default-inter').classList.add('hidden');
     } else {
         document.getElementById('default-inter').classList.remove('hidden');
-    }
+    } 
+    
 
 }
 
@@ -69,7 +73,7 @@ function rejectClick(id, card) {
     // set badge and count
     badge.innerText = "REJECTED";
     badge.classList.add("bg-red-400");
-    rejectCount.innerText = rejectSection.children.length;
+    
 
     // clone card
     const cloneCard = ogCard.cloneNode(true);
@@ -81,8 +85,11 @@ function rejectClick(id, card) {
     // set status
     ogCard.dataset.status = "rejected";
 
+    // set count
+    rejectCount.innerText = rejectSection.children.length - 1;
+
     // default view
-    if(rejectSection.children.length>0){
+    if(rejectCount.innerText > 0){
         document.getElementById('default-reject').classList.add('hidden');
     } else {
         document.getElementById('default-reject').classList.remove('hidden');
