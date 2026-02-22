@@ -58,19 +58,19 @@
 
         <!-- buttons -->
         <div class="flex gap-2 mb-4">
-            <button id="btn-all" class="btn btn-primary btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl">All</button>
-            <button id="btn-inter" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl">Interview</button>
-            <button id="btn-reject" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl">Rejected</button>
+            <button onclick="showOnly('all-job-cards')" id="btn-all" class="btn btn-primary btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl">All</button>
+            <button onclick="showOnly('inter-job-cards')" id="btn-inter" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl">Interview</button>
+            <button onclick="showOnly('reject-job-cards')" id="btn-reject" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl">Rejected</button>
         </div>
     </section>
 
-    <!-- job card section -->
-    <section id="all-job-cards" class="w-4/5 mx-auto hidden">
+    <!-- All job card section -->
+    <section id="all-job-cards" class="w-4/5 mx-auto">
 
         <div class="space-y-4 pb-16">
 
             <!-- card-1 -->
-            <div class="bg-base-100 p-6 rounded-xl flex flex-col gap-5">
+            <div id="card-1" class="bg-base-100 p-6 rounded-xl flex flex-col gap-5">
 
                 <!-- title -->
                 <div class="flex justify-between">
@@ -80,7 +80,7 @@
                     </div>
 
                     <!-- delete btn -->
-                    <div id="btn-dlt" class="p-2 rounded-full border border-[#F1F2F4] w-8 h-8 flex">
+                    <div class="p-2 rounded-full border border-[#F1F2F4] w-8 h-8 flex">
                         <i class="fa-regular fa-trash-can"></i>
                     </div>
                 </div>
@@ -95,8 +95,8 @@
 
                 <!-- badge -->
                 <div>
-                    <div class="badge badge-soft badge-secondary p-5 text-[#002C5C] text-[14px] font-medium mb-2">NOT
-                        APPLIED
+                    <div id="badge-1" class="badge badge-soft badge-secondary p-5 text-[#002C5C] text-[14px] font-medium mb-2">
+                        <p >NOT APPLIED</p>
                     </div>
                     <p>Build cross-platform mobile applications using React Native. Work on products used by millions of
                         users worldwide.</p>
@@ -105,13 +105,13 @@
 
                 <!-- btns -->
                 <div class="space-x-2">
-                    <button class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">INTERVIEW</button>
-                    <button class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">REJECTED</button>
+                    <button onclick="interviewClick('badge-1', 'card-1')" class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">INTERVIEW</button>
+                    <button onclick="rejectClick('badge-1', 'card-1')" class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">REJECTED</button>
                 </div>
             </div>
 
             <!-- card-2 -->
-            <div class="bg-base-100 p-6 rounded-xl flex flex-col gap-5">
+            <div id="card-2" class="bg-base-100 p-6 rounded-xl flex flex-col gap-5">
 
                 <!-- title -->
                 <div class="flex justify-between">
@@ -121,7 +121,7 @@
                     </div>
 
                     <!-- delete btn -->
-                    <div id="btn-dlt" class="p-2 rounded-full border border-[#F1F2F4] w-8 h-8 flex">
+                    <div class="p-2 rounded-full border border-[#F1F2F4] w-8 h-8 flex">
                         <i class="fa-regular fa-trash-can"></i>
                     </div>
                 </div>
@@ -136,8 +136,8 @@
 
                 <!-- badge -->
                 <div>
-                    <div class="badge badge-soft badge-secondary p-5 text-[#002C5C] text-[14px] font-medium mb-2">NOT
-                        APPLIED
+                    <div id="badge-2" class="badge badge-soft badge-secondary p-5 text-[#002C5C] text-[14px] font-medium mb-2">
+                        <p>NOT APPLIED</p>
                     </div>
                     <p>Create stunning web experiences for high-profile clients. Must have portfolio and experience with
                         modern web design trends.</p>
@@ -146,13 +146,13 @@
 
                 <!-- btns -->
                 <div class="space-x-2">
-                    <button class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">INTERVIEW</button>
-                    <button class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">REJECTED</button>
+                    <button onclick="interviewClick('badge-2', 'card-2')" class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">INTERVIEW</button>
+                    <button onclick="rejectClick('badge-2', 'card-2')" class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">REJECTED</button>
                 </div>
             </div>
 
             <!-- card-3 -->
-            <div class="bg-base-100 p-6 rounded-xl flex flex-col gap-5">
+            <div id="card-3" class="bg-base-100 p-6 rounded-xl flex flex-col gap-5">
 
                 <!-- title -->
                 <div class="flex justify-between">
@@ -162,7 +162,7 @@
                     </div>
 
                     <!-- delete btn -->
-                    <div id="btn-dlt" class="p-2 rounded-full border border-[#F1F2F4] w-8 h-8 flex">
+                    <div class="p-2 rounded-full border border-[#F1F2F4] w-8 h-8 flex">
                         <i class="fa-regular fa-trash-can"></i>
                     </div>
                 </div>
@@ -177,8 +177,8 @@
 
                 <!-- badge -->
                 <div>
-                    <div class="badge badge-soft badge-secondary p-5 text-[#002C5C] text-[14px] font-medium mb-2">NOT
-                        APPLIED
+                    <div id="badge-3" class="badge badge-soft badge-secondary p-5 text-[#002C5C] text-[14px] font-medium mb-2">
+                        <p>NOT APPLIED</p>
                     </div>
                     <p>Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong
                         analytical thinking.
@@ -188,13 +188,13 @@
 
                 <!-- btns -->
                 <div class="space-x-2">
-                    <button class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">INTERVIEW</button>
-                    <button class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">REJECTED</button>
+                    <button onclick="interviewClick('badge-3', 'card-3')" class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">INTERVIEW</button>
+                    <button onclick="rejectClick('badge-3', 'card-3')" class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">REJECTED</button>
                 </div>
             </div>
 
             <!-- card-4 -->
-            <div class="bg-base-100 p-6 rounded-xl flex flex-col gap-5">
+            <div id="card-4" class="bg-base-100 p-6 rounded-xl flex flex-col gap-5">
 
                 <!-- title -->
                 <div class="flex justify-between">
@@ -204,7 +204,7 @@
                     </div>
 
                     <!-- delete btn -->
-                    <div id="btn-dlt" class="p-2 rounded-full border border-[#F1F2F4] w-8 h-8 flex">
+                    <div class="p-2 rounded-full border border-[#F1F2F4] w-8 h-8 flex">
                         <i class="fa-regular fa-trash-can"></i>
                     </div>
                 </div>
@@ -219,8 +219,8 @@
 
                 <!-- badge -->
                 <div>
-                    <div class="badge badge-soft badge-secondary p-5 text-[#002C5C] text-[14px] font-medium mb-2">NOT
-                        APPLIED
+                    <div id="badge-4" class="badge badge-soft badge-secondary p-5 text-[#002C5C] text-[14px] font-medium mb-2">
+                        <p>NOT APPLIED</p>
                     </div>
                     <p>Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps
                         practices and cloud infrastructure.</p>
@@ -229,13 +229,13 @@
 
                 <!-- btns -->
                 <div class="space-x-2">
-                    <button class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">INTERVIEW</button>
-                    <button class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">REJECTED</button>
+                    <button onclick="interviewClick('badge-4', 'card-4')" class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">INTERVIEW</button>
+                    <button onclick="rejectClick('badge-4', 'card-4')" class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">REJECTED</button>
                 </div>
             </div>
 
             <!-- card-5 -->
-            <div class="bg-base-100 p-6 rounded-xl flex flex-col gap-5">
+            <div id="card-5" class="bg-base-100 p-6 rounded-xl flex flex-col gap-5">
 
                 <!-- title -->
                 <div class="flex justify-between">
@@ -260,8 +260,8 @@
 
                 <!-- badge -->
                 <div>
-                    <div class="badge badge-soft badge-secondary p-5 text-[#002C5C] text-[14px] font-medium mb-2">NOT
-                        APPLIED
+                    <div id="badge-5" class="badge badge-soft badge-secondary p-5 text-[#002C5C] text-[14px] font-medium mb-2">
+                        <p>NOT APPLIED</p>
                     </div>
                     <p>Create beautiful and functional user interfaces for our suite of products. Strong design skills
                         and frontend development expertise required..</p>
@@ -270,13 +270,13 @@
 
                 <!-- btns -->
                 <div class="space-x-2">
-                    <button class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">INTERVIEW</button>
-                    <button class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">REJECTED</button>
+                    <button onclick="interviewClick('badge-5', 'card-5')" class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">INTERVIEW</button>
+                    <button onclick="rejectClick('badge-5', 'card-5')" class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">REJECTED</button>
                 </div>
             </div>
 
             <!-- card-6 -->
-            <div class="bg-base-100 p-6 rounded-xl flex flex-col gap-5">
+            <div id="card-6" class="bg-base-100 p-6 rounded-xl flex flex-col gap-5">
 
                 <!-- title -->
                 <div class="flex justify-between">
@@ -301,8 +301,8 @@
 
                 <!-- badge -->
                 <div>
-                    <div class="badge badge-soft badge-secondary p-5 text-[#002C5C] text-[14px] font-medium mb-2">NOT
-                        APPLIED
+                    <div id="badge-6" class="badge badge-soft badge-secondary p-5 text-[#002C5C] text-[14px] font-medium mb-2">
+                        <p>NOT APPLIED</p>
                     </div>
                     <p>Build enterprise applications with JavaScript and modern frameworks. We offer competitive
                         compensation, health insurance, and professional development opportunities.</p>
@@ -311,13 +311,13 @@
 
                 <!-- btns -->
                 <div class="space-x-2">
-                    <button class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">INTERVIEW</button>
-                    <button class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">REJECTED</button>
+                    <button onclick="interviewClick('badge-6', 'card-6')" class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">INTERVIEW</button>
+                    <button onclick="rejectClick('badge-6', 'card-6')" class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">REJECTED</button>
                 </div>
             </div>
 
             <!-- card-7 -->
-            <div class="bg-base-100 p-6 rounded-xl flex flex-col gap-5">
+            <div id="card-7" class="bg-base-100 p-6 rounded-xl flex flex-col gap-5">
 
                 <!-- title -->
                 <div class="flex justify-between">
@@ -342,8 +342,8 @@
 
                 <!-- badge -->
                 <div>
-                    <div class="badge badge-soft badge-secondary p-5 text-[#002C5C] text-[14px] font-medium mb-2">NOT
-                        APPLIED
+                    <div id="badge-7" class="badge badge-soft badge-secondary p-5 text-[#002C5C] text-[14px] font-medium mb-2">
+                        <p>NOT APPLIED</p>
                     </div>
                     <p>Join our fast-growing startup and work on our core platform. Experience with Node.js and React
                         required. Great benefits and equity package included.</p>
@@ -352,13 +352,13 @@
 
                 <!-- btns -->
                 <div class="space-x-2">
-                    <button class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">INTERVIEW</button>
-                    <button class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">REJECTED</button>
+                    <button onclick="interviewClick('badge-7', 'card-7')" class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">INTERVIEW</button>
+                    <button onclick="rejectClick('badge-7', 'card-7')" class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">REJECTED</button>
                 </div>
             </div>
 
             <!-- card-8 -->
-            <div class="bg-base-100 p-6 rounded-xl flex flex-col gap-5">
+            <div id="card-8" class="bg-base-100 p-6 rounded-xl flex flex-col gap-5">
 
                 <!-- title -->
                 <div class="flex justify-between">
@@ -368,7 +368,7 @@
                     </div>
 
                     <!-- delete btn -->
-                    <div id="btn-dlt" class="p-2 rounded-full border border-[#F1F2F4] w-8 h-8 flex">
+                    <div class="p-2 rounded-full border border-[#F1F2F4] w-8 h-8 flex">
                         <i class="fa-regular fa-trash-can"></i>
                     </div>
                 </div>
@@ -383,8 +383,8 @@
 
                 <!-- badge -->
                 <div>
-                    <div class="badge badge-soft badge-secondary p-5 text-[#002C5C] text-[14px] font-medium mb-2">NOT
-                        APPLIED
+                    <div id="badge-8" class="badge badge-soft badge-secondary p-5 text-[#002C5C] text-[14px] font-medium mb-2">
+                        <p>NOT APPLIED</p>
                     </div>
                     <p>We are looking for an experienced Frontend Developer to build scalable web applications using
                         React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
@@ -393,15 +393,25 @@
 
                 <!-- btns -->
                 <div class="space-x-2">
-                    <button class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">INTERVIEW</button>
-                    <button class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">REJECTED</button>
+                    <button onclick="interviewClick('badge-8', 'card-8')" class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">INTERVIEW</button>
+                    <button onclick="rejectClick('badge-8', 'card-8')" class="btn btn-outline border-[#10B981] text-[#EF4444] font-semibold">REJECTED</button>
                 </div>
             </div>
 
     </section>
 
+     <!-- interview section -->
+     <section id="inter-job-cards" class="w-4/5 mx-auto space-y-4 pb-16">
+
+     </section>
+    
+      <!-- rejected section -->
+     <section id="reject-job-cards" class="w-4/5 mx-auto space-y-4 pb-16">
+
+     </section>
+
     <!-- no job available -->
-    <section class="w-4/5 mx-auto bg-base-100 rounded-xl ">
+    <section class="w-4/5 mx-auto bg-base-100 rounded-xl mb-12">
 
         <div class="text-center flex flex-col justify-center items-center px-10 py-16 mb-16">
             <img src="./assignment_7959593 1.svg" alt="" class="mb-5">
@@ -410,6 +420,8 @@
         </div>
 
     </section>
+
+    <script src="./scripts/machine.js"></script>
 </body>
 
 </html>
