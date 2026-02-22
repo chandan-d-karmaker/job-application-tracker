@@ -116,19 +116,24 @@ function showOnly(id, btn) {
     const SelectedBtn = document.getElementById(btn);
     SelectedBtn.classList.add("btn-primary");
 
+    // set mini count
+    const miniCount = document.getElementById('mini-count');
+    miniCount.innerText = show.children.length;
+
 }
 
+// only deletes cards from all section, cloned cards in interview or rejected section remains and can't be deleted now
 function deleteBtn(id){
     // get the card to be deleted
     const card = document.getElementById(id);
-    // const cardClone = document.getElementById(id + '-clone');
+
+    // remove card
+    card.remove();
 
     // get and set total count
     const totalCount = document.getElementById('total-count');
-    totalCount.innerText--;
-    // const interviewCount = interSection.children.length;
-    
-    // remove card
-    card.remove();
-    cardClone.remove();
+    const totalParent = document.getElementById('all-job-card');
+    const miniCount = document.getElementById('mini-count');
+    miniCount.innerText = totalParent.children.length;
+    totalCount.innerText = totalParent.children.length;    
 }
