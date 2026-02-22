@@ -36,6 +36,13 @@ function interviewClick(id, card) {
     // set status
     ogCard.dataset.status = "interview";
 
+    // default view
+    if(interSection.children.length>0){
+        document.getElementById('default-inter').classList.add('hidden');
+    } else {
+        document.getElementById('default-inter').classList.remove('hidden');
+    }
+
 }
 
 function rejectClick(id, card) {
@@ -74,6 +81,12 @@ function rejectClick(id, card) {
     // set status
     ogCard.dataset.status = "rejected";
 
+    // default view
+    if(rejectSection.children.length>0){
+        document.getElementById('default-reject').classList.add('hidden');
+    } else {
+        document.getElementById('default-reject').classList.remove('hidden');
+    }
     
 }
 
