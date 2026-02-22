@@ -78,19 +78,29 @@ function rejectClick(id, card) {
 }
 
 // show only clicked section
-function showOnly(id) {
-    // get all section
+function showOnly(id, btn) {
+    // get all section and buttons
     const all = document.getElementById('all-job-cards');
+    const allBtn = document.getElementById('btn-all');
     const inter = document.getElementById('inter-job-cards');
+    const interBtn = document.getElementById('btn-inter');
     const reject = document.getElementById('reject-job-cards');
+    const rejectBtn = document.getElementById('btn-reject');
 
-    // hide all section
+    // hide all section and remove btn class
     all.classList.add("hidden");
+    allBtn.classList.remove('btn-primary');
     inter.classList.add("hidden");
+    interBtn.classList.remove("btn-primary");
     reject.classList.add("hidden");
+    rejectBtn.classList.remove("btn-primary");
 
     // show only clicked section
     const show = document.getElementById(id);
     show.classList.remove("hidden")
+
+    // get selected btn and make it primary
+    const SelectedBtn = document.getElementById(btn);
+    SelectedBtn.classList.add("btn-primary");
 
 }
