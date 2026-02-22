@@ -137,9 +137,9 @@ function deleteBtn(id){
     miniCount.innerText = totalParent.children.length - 1;
     totalCount.innerText = totalParent.children.length - 1;    
 
-    if(totalParent.children.length > 0){
-        document.getElementById('default-all').classList.add('hidden');
-    } else {
+    if(totalCount.innerText == 0){
         document.getElementById('default-all').classList.remove('hidden');
+    } else {
+        document.getElementById('default-all').classList.add('hidden');
     }
 }
