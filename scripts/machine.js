@@ -117,3 +117,18 @@ function showOnly(id, btn) {
     SelectedBtn.classList.add("btn-primary");
 
 }
+
+function deleteBtn(id){
+    // get the card to be deleted
+    const card = document.getElementById(id);
+    // const cardClone = document.getElementById(id + '-clone');
+
+    // get and set total count
+    const totalCount = document.getElementById('total-count');
+    totalCount.innerText--;
+    // const interviewCount = interSection.children.length;
+    
+    // remove card
+    card.remove();
+    cardClone.remove();
+}
