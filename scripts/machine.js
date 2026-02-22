@@ -1,5 +1,4 @@
 // badge change and count tracker
-
 function interviewClick(id, card) {
     // get badge and card
     const badge = document.getElementById(id);
@@ -13,17 +12,29 @@ function interviewClick(id, card) {
     const interviewCount = document.getElementById('interview-count');
     const rejectCount = document.getElementById('rejected-count');
 
+    // if user clicks button again
+    if(ogCard.dataset.status === 'interview') return;
+    if(ogCard.dataset.status === 'rejected'){
+        const preClone = document.getElementById(card + '-clone');
+        if(preClone) preClone.remove();
+        rejectCount.innerText--;
+    }
+
     // set badge and count
     badge.innerText = "INTERVIEWED";
     badge.classList.add("bg-green-400");
     badge.classList.remove("bg-red-400");
+    interviewCount.innerText = interSection.children.length;
 
-    interviewCount.innerText++;
+    // clone card
+    const cloneCard = ogCard.cloneNode(true);
+    cloneCard.id = card + "-clone";
 
     // append child to parent
-    interSection.appendChild(ogCard);
+    interSection.appendChild(cloneCard);
 
-    // if(badge.innerText === "INTERVIEWED") return;
+    // set status
+    ogCard.dataset.status = "interview";
 
 }
 
@@ -40,16 +51,33 @@ function rejectClick(id, card) {
     const interviewCount = document.getElementById('interview-count');
     const rejectCount = document.getElementById('rejected-count');
 
-    // get badge and card
+    // if user clicks button again
+    if(ogCard.dataset.status === 'rejected') return;
+    if(ogCard.dataset.status === 'interview'){
+        const preClone = document.getElementById(card + '-clone');
+        if(preClone) preClone.remove();
+        interviewCount.innerText--;
+    }
+
+    // set badge and count
     badge.innerText = "REJECTED";
     badge.classList.add("bg-red-400");
+    rejectCount.innerText = rejectSection.children.length;
 
-    rejectCount.innerText++;
+    // clone card
+    const cloneCard = ogCard.cloneNode(true);
+    cloneCard.id = card + "-clone";
 
     // append child to parent
-    rejectSection.appendChild(ogCard);
+    rejectSection.appendChild(cloneCard);
+
+    // set status
+    ogCard.dataset.status = "rejected";
+
+    
 }
 
+// show only clicked section
 function showOnly(id) {
     // get all section
     const all = document.getElementById('all-job-cards');
