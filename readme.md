@@ -35,3 +35,19 @@
         <td>Static (snapshot in time)</td>
     </tr>
 </table>
+
+## 2. How do you create and insert a new element into the DOM?
+### Answer: step-1: create the new element
+### const newElement = document.createElement('element-name')
+### step-2: customize new element
+### newElement.innerHTML = html file or text
+### newElement.classList.add('class name')
+### step-3: get parent section
+### const elementContainer = document.getElementById('element-container')
+### step-4: insert(append) the element
+### elementContainer.appendChild(newElement)
+
+## 3. What is Event Bubbling? And how does it work?
+### Answer: When an event happens on an element, it bubbles up through it's ancestors.
+### If someone clicks a button inside a <div> the event first fires the button, then the div, the the body and finally the document.
+
