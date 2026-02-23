@@ -1,6 +1,7 @@
 # Basic Q&A 
 
 ## 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
+
 ### Answer: The main difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll is given in the table below:
 
 <table>
@@ -37,6 +38,7 @@
 </table>
 
 ## 2. How do you create and insert a new element into the DOM?
+
 ### Answer: step-1: create the new element
 ### const newElement = document.createElement('element-name')
 ### step-2: customize new element
@@ -48,6 +50,12 @@
 ### elementContainer.appendChild(newElement)
 
 ## 3. What is Event Bubbling? And how does it work?
+
 ### Answer: When an event happens on an element, it bubbles up through it's ancestors.
 ### If someone clicks a button inside a <div> the event first fires the button, then the div, the the body and finally the document.
+
+## 4. What is Event Delegation in JavaScript? Why is it useful?
+
+### Answer: Event Delegation is a method where we add event listers to the parent instead of it's children. This method is memory
+### efficient as wee only need one event listener and dynamic as we don't need to add event listener if a new children comes to the parent.
 
